@@ -1,5 +1,9 @@
+import { Typography } from "@mui/material";
+
 export default function Flex() {
   return (
-    <div>Flex</div>
-  )
+    <div>
+      <Typography>Flex</Typography>
+    </div>
+  );
 }
