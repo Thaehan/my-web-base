@@ -1,10 +1,17 @@
-import { createTheme, responsiveFontSizes } from "@mui/material";
+import {
+  PaletteOptions,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material";
 import { useSelector } from "react-redux";
 
 import { IRootState } from "Store";
+import { DARK_COLOR_SET, LIGHT_COLOR_SET } from "./Colors";
 
 export default function useAppTheme() {
   const mode = useSelector((state: IRootState) => state.system.themeMode);
+  const currentTheme: PaletteOptions =
+    mode === "light" ? LIGHT_COLOR_SET : DARK_COLOR_SET;
 
   const AppTheme = createTheme({
     typography: {
@@ -13,16 +20,7 @@ export default function useAppTheme() {
     components: {},
     palette: {
       mode: mode,
-      primary: {
-        main: "#90E0EF",
-        light: "#90E0EF",
-        dark: "#000000",
-      },
-      secondary: {
-        main: "#FFFFFF",
-        light: "#FFFFFF",
-        dark: "#FFFFFF",
-      },
+      ...currentTheme,
     },
   });
 
