@@ -3,17 +3,19 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer, PersistConfig, persistStore } from "redux-persist";
 
 import SystemSlice from "Store/Slices/SystemSlice";
+import UserSlice from "./Slices/UserSlice";
 
 const persistConfig: PersistConfig<any> = {
   key: "root",
   version: 1,
   storage: storage,
   blacklist: [],
-  whitelist: ["system"],
+  whitelist: ["system", "user"],
 };
 
 const combinedReducer = combineReducers({
   system: SystemSlice,
+  user: UserSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, combinedReducer);

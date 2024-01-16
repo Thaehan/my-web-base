@@ -1,11 +1,11 @@
 import { PaletteMode } from "@mui/material";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface SystemState {
+interface ISystemState {
   themeMode: PaletteMode;
 }
 
-const initialState: SystemState = {
+const initialState: ISystemState = {
   themeMode: "light",
 };
 

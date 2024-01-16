@@ -9,10 +9,16 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+      Apis: fileURLToPath(new URL("./src/Apis", import.meta.url)),
+      Assets: fileURLToPath(new URL("./src/Assets", import.meta.url)),
       Components: fileURLToPath(new URL("./src/Components", import.meta.url)),
+      Constants: fileURLToPath(new URL("./src/Constants", import.meta.url)),
+      Hooks: fileURLToPath(new URL("./src/Hooks", import.meta.url)),
       Pages: fileURLToPath(new URL("./src/Pages", import.meta.url)),
       Themes: fileURLToPath(new URL("./src/Themes", import.meta.url)),
       Store: fileURLToPath(new URL("./src/Store", import.meta.url)),
+      Routes: fileURLToPath(new URL("./src/Routes", import.meta.url)),
+      Utils: fileURLToPath(new URL("./src/Utils", import.meta.url)),
     },
   },
 });

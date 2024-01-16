@@ -6,7 +6,7 @@ import {
 import { useSelector } from "react-redux";
 
 import { IRootState } from "Store";
-import { DARK_COLOR_SET, LIGHT_COLOR_SET } from "./Colors";
+import { DARK_COLOR_SET, LIGHT_COLOR_SET } from "Themes/Colors";
 
 export default function useAppTheme() {
   const mode = useSelector((state: IRootState) => state.system.themeMode);
@@ -26,5 +26,6 @@ export default function useAppTheme() {
 
   return {
     AppTheme: responsiveFontSizes(AppTheme),
+    currentMode: mode,
   };
 }

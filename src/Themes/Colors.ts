@@ -2,16 +2,16 @@ import { PaletteOptions } from "@mui/material";
 
 export const DARK_COLOR_SET: PaletteOptions = {
   primary: {
-    light: "#757ce8",
-    main: "#3f50b5",
-    dark: "#002884",
+    light: "#ffef62",
+    main: "#ffeb3b",
+    dark: "#b2a429",
     contrastText: "#fff",
   },
   secondary: {
-    light: "#ff7961",
-    main: "#f44336",
-    dark: "#ba000d",
-    contrastText: "#000",
+    light: "#a2cf6e",
+    main: "#8bc34a",
+    dark: "#618833",
+    contrastText: "#fff",
   },
 };
 
@@ -20,10 +20,12 @@ export const LIGHT_COLOR_SET: PaletteOptions = {
     main: "#90E0EF",
     light: "#90E0EF",
     dark: "#000000",
+    contrastText: "#fff",
   },
   secondary: {
     main: "#FFFFFF",
     light: "#FFFFFF",
     dark: "#FFFFFF",
+    contrastText: "#fff",
   },
 };

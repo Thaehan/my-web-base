@@ -1,29 +1,34 @@
-import { Button, Typography } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import { Button, Container, Typography } from "@mui/material";
+import { useDispatch } from "react-redux";
 
-import Flex from "Components/Flex";
 import { setThemeMode } from "Store/Slices/SystemSlice";
-import { IRootState } from "Store";
+import useAppTheme from "Hooks/useAppTheme";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const themeMode = useSelector((state: IRootState) => state.system.themeMode);
+  const { currentMode } = useAppTheme();
+
+  const onClickChangeTheme = () => {
+    if (currentMode === "dark") {
+      dispatch(setThemeMode("light"));
+      return;
+    }
+    dispatch(setThemeMode("dark"));
+  };
 
   return (
-    <div>
-      <Typography color='primary'>Home</Typography>
+    <Container>
+      <Typography
+        color='primary'
+        style={{
+          backgroundColor: "cyan",
+        }}>
+        Home
+      </Typography>
       <Typography color='secondary'>Home</Typography>
-      <Flex />
-      <Button
-        title='Change theme'
-        onClick={() => {
-          if (themeMode === "dark") {
-            dispatch(setThemeMode("light"));
-            return;
-          }
-          dispatch(setThemeMode("dark"));
-        }}
-      />
-    </div>
+      <Button onClick={onClickChangeTheme} color='secondary'>
+        Change theme mode
+      </Button>
+    </Container>
   );
 }

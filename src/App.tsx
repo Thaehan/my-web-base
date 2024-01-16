@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@mui/material";
 
-import useAppTheme from "Themes";
+import useAppTheme from "Hooks/useAppTheme";
 import Home from "Pages/Home";
 import "Themes/AppFonts.css";
 
