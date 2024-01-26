@@ -1,16 +1,21 @@
 import { ThemeProvider } from "@mui/material";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import useAppTheme from "Hooks/useAppTheme";
-import Home from "Pages/Home";
+import MainRoutes from "Routes/MainRoutes";
 import "Themes/AppFonts.css";
+
+const queryClient = new QueryClient();
 
 function App() {
   const { AppTheme } = useAppTheme();
 
   return (
-    <ThemeProvider theme={AppTheme}>
-      <Home />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={AppTheme}>
+        <MainRoutes />
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 

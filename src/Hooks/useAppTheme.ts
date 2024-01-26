@@ -1,27 +1,18 @@
-import {
-  PaletteOptions,
-  createTheme,
-  responsiveFontSizes,
-} from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 import { useSelector } from "react-redux";
 
 import { IRootState } from "Store";
 import { DARK_COLOR_SET, LIGHT_COLOR_SET } from "Themes/Colors";
+import COMPONENT_OPTIONS from "Themes/Components";
+import TYPOGRAPHY_OPTIONS from "Themes/Typographies";
 
 export default function useAppTheme() {
   const mode = useSelector((state: IRootState) => state.system.themeMode);
-  const currentTheme: PaletteOptions =
-    mode === "light" ? LIGHT_COLOR_SET : DARK_COLOR_SET;
 
   const AppTheme = createTheme({
-    typography: {
-      fontFamily: "Open Sans",
-    },
-    components: {},
-    palette: {
-      mode: mode,
-      ...currentTheme,
-    },
+    typography: TYPOGRAPHY_OPTIONS,
+    components: COMPONENT_OPTIONS,
+    palette: mode === "light" ? LIGHT_COLOR_SET : DARK_COLOR_SET,
   });
 
   return {

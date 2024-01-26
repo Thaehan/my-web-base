@@ -2,13 +2,14 @@ import axios from "axios";
 
 import { API_URL } from "Constants/Configs";
 
-const POST_API_URL = `${API_URL}`;
+const USER_API = `${API_URL}`;
 
-const getPost = async () => {
-  const result = await axios.get(POST_API_URL);
-  return result;
+const login = async (data: any) => {
+  console.log("data", data);
+  const result = await axios.post(USER_API, data);
+  return result.data;
 };
 
 export default {
-  getPost,
+  login,
 };

@@ -1,6 +1,7 @@
 import { PaletteOptions } from "@mui/material";
 
 export const DARK_COLOR_SET: PaletteOptions = {
+  mode: "light",
   primary: {
     light: "#ffef62",
     main: "#ffeb3b",
@@ -16,6 +17,7 @@ export const DARK_COLOR_SET: PaletteOptions = {
 };
 
 export const LIGHT_COLOR_SET: PaletteOptions = {
+  mode: "dark",
   primary: {
     main: "#90E0EF",
     light: "#90E0EF",
