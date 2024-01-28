@@ -20,6 +20,7 @@ export default defineConfig({
       Routes: fileURLToPath(new URL("./src/Routes", import.meta.url)),
       Store: fileURLToPath(new URL("./src/Store", import.meta.url)),
       Themes: fileURLToPath(new URL("./src/Themes", import.meta.url)),
+      Types: fileURLToPath(new URL("./src/Types", import.meta.url)),
       Utils: fileURLToPath(new URL("./src/Utils", import.meta.url)),
     },
   },

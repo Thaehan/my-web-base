@@ -6,6 +6,7 @@ import PATH_NAMES from "Constants/PathNames";
 import NotFound from "Pages/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
 import Help from "Pages/Help/Help";
+import PublicRoute from "./PublicRoute";
 
 function AllRoutes() {
   const routes = useRoutes([
@@ -25,7 +26,11 @@ function AllRoutes() {
     },
     {
       path: PATH_NAMES.LOGIN,
-      element: <Login />,
+      element: (
+        <PublicRoute>
+          <Login />
+        </PublicRoute>
+      ),
       children: [],
     },
     {

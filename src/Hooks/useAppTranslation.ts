@@ -6,7 +6,8 @@ import { useTranslation } from "react-i18next";
 import { IRootState } from "Store";
 import { EN_RELATIVE_TIME, VI_RELATIVE_TIME } from "Constants/Locals";
 import { setLanguage } from "Store/Slices/SystemSlice";
-import { TLanguages, translate } from "Languages";
+import { translate } from "Languages";
+import { TLanguages } from "Types";
 
 export default function useAppTranslation() {
   const dispatch = useDispatch();

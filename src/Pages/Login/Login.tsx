@@ -2,13 +2,9 @@ import { useForm } from "react-hook-form";
 import { Button, Container } from "@mui/material";
 
 import TextField from "Components/TextField";
-import useLogin from "./services/useLogin";
 import useAppTranslation from "Hooks/useAppTranslation";
-
-type TLoginForm = {
-  username: string;
-  password: string;
-};
+import { TLoginForm } from "Types";
+import useLogin from "./services/useLogin";
 
 const DEFAULT_VALUE: TLoginForm = {
   username: "",

@@ -4,8 +4,6 @@ import { initReactI18next } from "react-i18next";
 import vi from "./vi.json";
 import en from "./en.json";
 
-export type TLanguages = "vi" | "en";
-
 const resources = {
   vi: { translation: vi },
   en: { translation: en },
