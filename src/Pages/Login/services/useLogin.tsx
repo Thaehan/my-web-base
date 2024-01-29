@@ -10,7 +10,6 @@ export default function useLogin() {
     mutationKey: [MUTATION_KEYS.LOGIN],
     mutationFn: UserApi.login,
     onSuccess: (result) => {
-      console.log("result", result);
       setCurrentUser(result.data);
     },
     onError: (message) => {
